@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<div class="container"> 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Unit</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in products %}
+      <tr>
+        <td scope="row" >{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.price}} BDT</td>
+        <td>{{p.category}}</td>
+        <td>{{p.Available_Unit}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- {% for p in products %}
+  <div style="float: left; margin: 5px;">
+    <div class="card p-1" style="width: 18rem; margin: 5px; float: left;">
+      <img class="card-img-top" src="{% static 'images/photo_2021-04-06_13-18-39.jpg ' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: bold;"><td>{{p.title}}</td></h5>
+        <h5 class="card-title"><td>Price:  {{p.price}} BDT</td></h5>
+        <h5 class="card-title"><td>Unit: {{p.Available_Unit}}</td></h5>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %} -->
+  
+
+</div>
+{% endblock %}
